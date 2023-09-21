@@ -49,7 +49,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
@@ -57,7 +57,7 @@ const config = {
         logo: {
           alt: 'openinula',
           src: 'img/logo.png',
-          srcDark:'img/dark logo.png'
+          srcDark: 'img/dark logo.png'
         },
         items: [
           {
@@ -89,6 +89,11 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  themes: [
+    [require.resolve('@easyops-cn/docusaurus-search-local'),
+      ({docsRouteBasePath: '/', language: ['zh', 'en']})]
+  ],
 };
 
 module.exports = config;
