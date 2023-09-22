@@ -39,7 +39,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          breadcrumbs: false,
         },
         blog: false,
         theme: {
@@ -71,7 +70,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'apiSidebar',
             position: 'left',
-            label: 'API',
+            label: 'API参考',
           },
           {
             href: 'https://gitee.com/openInula',
