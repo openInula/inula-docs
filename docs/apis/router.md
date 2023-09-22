@@ -1,14 +1,14 @@
 ---
 sidebar_position: 4
-id: inula-router
-hide_title: true
+id: Inula-router
 ---
 
-## inula-router 组件式API
+## Inula-router 组件式API
 
 ### BrowserRouter
 
 **功能介绍**
+
 使用`BrowserRouter`组件包裹整个应用，它提供一个`history`对象来管理浏览器的历史记录，`BrowserRouter`使用HTML5的`history API`来实现路由。
 
 **接口定义**
@@ -55,6 +55,7 @@ function App() {
 ### HashRouter
 
 **功能介绍**
+
 使用`HashRouter`组件包裹整个应用，它提供一个`history`对象来管理浏览器的历史记录，`HashRouter`使用`URL`的`hash`值来实现路由，会在`URL`中显示`#`符号。
 
 **接口定义**
@@ -448,7 +449,7 @@ function InputForm() {
 
 
 
-## inula-router 函数式API
+## Inula-router 函数式API
 
 ### useHistory
 
@@ -581,6 +582,7 @@ function App() {
 ### useRouteMatch
 
 **功能介绍**
+
 `useRouteMatch`返回一个包含当前路由的匹配信息的`match`对象，可以在无需`<Route>`的情况下访问匹配数据，`useRouteMatch`对于那些非路由但自身状态与当前路径相关的组件非常有用。
 
 **定义**
@@ -667,9 +669,9 @@ function App() {
 
 **功能介绍**
 
-`withRouter`是一个高阶函数组件，可以将inula-router的history，location，match三个对象注入到任何自定义组件中的props中。
+`withRouter`是一个高阶函数组件，可以将inula-router的`history`，`location`，`match`三个对象注入到任何自定义组件中的props中。
 
-* history
+* `history`
   - `length`: 历史记录栈的长度。
   - `action`: 当前导航的动作类型，可以是PUSH、REPLACE或POP。
   - `location`: 当前的位置对象，包含pathname、search、hash和state等属性。
@@ -680,12 +682,12 @@ function App() {
   - `goForward()`: 用于前进到历史记录栈中的下一个位置，等价于go(1)。
   - `block()`: 用于阻止导航，并在导航发生时执行一个回调函数。
   - `listen()`: 用于注册一个监听器，当历史记录发生变化时执行。
-* location
+* `location`
   - `pathname`: URL路径名。
   - `search`: URL查询字符串。
   - `hash`: URL哈希值。
   - `state`: 额外状态数据。
-* match
+* `match`
   - `score`: 匹配到该URL的匹配分数。
   - `params`: 从URL中解析出来的与path对应的参数.
   - `path`: 匹配使用的URL模板。

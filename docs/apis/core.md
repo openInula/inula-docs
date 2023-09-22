@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
-id: openinula
-hide_title: true
+id: Inula
 ---
+
+# Inula API
 
 ## 组件
 ### Component
@@ -302,7 +303,7 @@ function App() {
 
 ### Suspense
 
-**功能介绍
+**功能介绍**
 
 `<Suspense>`是一个组件，用于在异步加载数据时展示一个fallback视图
 
@@ -355,7 +356,7 @@ export default AsyncComponent = () => {
 
 在`Inula`中，钩子函数使用来在函数组件中添加状态和其他Inula特性函数。可以让我们在不编写类组件的情况下使用状态和`Inula`的其他功能。通过使用钩子函数，我们可以更方便地编写和管理React组件的状态和行为，使代码更简洁、可读性更高。
 
-钩子函数可以让我们在函数组件中使用状态管理、生命周期方法、副作用等功能。常用的钩子函数包括useState、useEffect、useContext、useReducer等。
+钩子函数可以让我们在函数组件中使用状态管理、生命周期方法、副作用等功能。常用的钩子函数包括`useState`、`useEffect`、`useContext`、`useReducer`等。
 
 > 注意：
 >
@@ -366,7 +367,7 @@ export default AsyncComponent = () => {
 
 **功能介绍**
 
-`useState `是一个用于在函数组件中添加状态(`state`)的钩子函数。使用`useState`可以让函数组件拥有类组件的状态管理能力。
+`useState`是一个用于在函数组件中添加状态(`state`)的钩子函数。使用`useState`可以让函数组件拥有类组件的状态管理能力。
 
 **接口定义**
 
@@ -431,7 +432,8 @@ const cachedFn = useCallback(callback: T, deps: DependencyList)
 `useCallback`的返回值：
 
 - `cachedFn`: 若是初次渲染，返回已传入的`callback`函数，当依赖项`deps`无变化时，返回上次渲染缓存的`callback`函数，当依赖项`deps`有变化时，则返回这次渲染传入的`callback`函数
-  **示例**
+
+**示例**
 
 ```jsx
 import Inula, { useState, useCallback } from 'openinula';
@@ -476,7 +478,6 @@ const value = useContext(context: Context<T>)
 `useContext`的返回值：
 
 - `value`: 其返回值是一个包含Provider的值，改`value.Provider`是由最近的上层上下文提供，如果没有找到匹配的上层上下文，则会使用上下文对象的默认值。
-- 
 
 **示例**
 
@@ -522,7 +523,7 @@ const App = () => {
 
 **功能介绍**
 
-`useEffect `是一个用于处理副作用（如数据获取、订阅、DOM 操作等）的钩子函数。它在组件的生命周期中执行，并且可以用于在组件渲染后执行一些操作，或在组件卸载前执行一些清理工作。
+`useEffect` 是一个用于处理副作用（如数据获取、订阅、DOM 操作等）的钩子函数。它在组件的生命周期中执行，并且可以用于在组件渲染后执行一些操作，或在组件卸载前执行一些清理工作。
 
 **接口定义**
 
@@ -602,7 +603,6 @@ function App() {
 在示例二中，`useEffect`可以用于设置和清理定时器。
 
 - 示例三：
-- 
 
 ```tsx
 useEffect(() => {
@@ -749,7 +749,7 @@ const cachedValue = useMemo(create, deps)
 
 
 
-- `create`**一个函数，用于计算需要缓存的值。
+- `create`：一个函数，用于计算需要缓存的值。
 - `deps`：一个数组，指定了哪些依赖项的变化会触发重新计算 `create`。当依赖项发生变化时，`create` 将会被重新执行，返回一个新的缓存值。如果依赖项列表为空，那么` create` 只在组件挂载时执行一次。
 
 `useMemo`的返回值：
@@ -797,7 +797,7 @@ function App() {
 
 
 
-在这个示例中，`ExpensiveComponent `组件包含一个昂贵的计算操作，该计算在每次渲染时都会执行。通过使用 `useMemo`，可以缓存计算结果，只有在 `number` 发生变化时才重新计算。这可以有效避免在每次渲染时都执行昂贵的计算，从而提高性能。
+在这个示例中，`ExpensiveComponent` 组件包含一个昂贵的计算操作，该计算在每次渲染时都会执行。通过使用 `useMemo`，可以缓存计算结果，只有在 `number` 发生变化时才重新计算。这可以有效避免在每次渲染时都执行昂贵的计算，从而提高性能。
 
 > 注意：`useMemo` 可以在性能优化方面发挥作用，但不应该被滥用。在某些情况下，过度使用 `useMemo` 可能会导致代码更难理解。只有在确实需要避免重复计算的情况下，才应该使用 `useMemo`。
 
@@ -903,11 +903,11 @@ function App() {
 
 
 
-上面的示例中，创建了一个函数组件 `RefDemo`，使用 `useRef` 钩子创建了一个名为 `inputRef` 的 `ref `对象。在 JSX 中，将这个`ref`对象绑定到输入框元素上。
+上面的示例中，创建了一个函数组件 `RefDemo`，使用 `useRef` 钩子创建了一个名为 `inputRef` 的 `ref` 对象。在 JSX 中，将这个 `ref` 对象绑定到输入框元素上。
 
 当按钮被点击时，`handleButtonClick` 函数会使用 inputRef.current 来获取输入框的 DOM 元素，并调用 `focus()` 方法来设置焦点。这样，点击按钮后，输入框就会自动获得焦点。
 
-> 注意：`useRef` 不仅适用于获取 DOM 元素的引用，还可以在函数组件中存储和访问任意可变值。与 `state`一样，`ref `可以指向任何东西：比如字符串、对象甚至函数。与 `state` 不同的是，`ref` 是一个带有当前属性的普通对象，可以读取和修改。
+> 注意：`useRef` 不仅适用于获取 DOM 元素的引用，还可以在函数组件中存储和访问任意可变值。与 `state`一样，`ref` 可以指向任何东西：比如字符串、对象甚至函数。与 `state` 不同的是，`ref` 是一个带有当前属性的普通对象，可以读取和修改。
 
 **存储变量**
 
@@ -934,7 +934,7 @@ export default function ClickWatch() {
 
 在上述示例中，将在每次点击后增加 `ref.current`。
 
-> 注意：组件不会在每次递增时都触发重新渲染。 像 `state` 一样，`ref` 在 重新渲染时被 `Inula` 保留。然而，`setState`将会重新渲染组件，而设置 `ref `则不会。
+> 注意：组件不会在每次递增时都触发重新渲染。 像 `state` 一样，`ref` 在 重新渲染时被 `Inula` 保留。然而，`setState`将会重新渲染组件，而设置 `ref` 则不会。
 
 ### useImperativeHandle
 
@@ -1036,7 +1036,7 @@ render(<App />, document.getElementById('div'));
 
 **功能介绍**
 
-当无法使用jsx语法时，可以使用·createElemet·创建一个Inula元素。
+当无法使用jsx语法时，可以使用`createElemet`创建一个Inula元素。
 
 **接口定义**
 
@@ -1129,7 +1129,7 @@ function Component() {
 
 `createRef`用于在类组件中声明一个`ref`对象。
 
-**接口定义
+**接口定义**
 
 ```tsx
 function createRef(): RefType
@@ -1141,7 +1141,7 @@ type RefType = {
 
 
 
-**示例
+**示例**
 
 ```tsx
 import { Component, createRef } from 'openinula';
@@ -1168,7 +1168,7 @@ class App extends Component {
 
 
 
-上述示例创建了一个App组件，通过调用createRef()函数创建一个对象inputRef。ref对象可以用来引用DOM元素或组件实例。在渲染时，handleClick方法会被调用，它会通过this.inputRef.current.value来增加input元素的值。input元素通过ref属性引用inputRef。这样就可以通过this.inputRef来操作输入框。
+上述示例创建了一个 `App` 组件，通过调用 `createRef()` 函数创建一个对象 `inputRef`。`ref` 对象可以用来引用DOM元素或组件实例。在渲染时，`handleClick` 方法会被调用，它会通过 `this.inputRef.current.value` 来增加 `input` 元素的值。`input` 元素通过 `ref` 属性引用 `inputRef`。这样就可以通过 `this.inputRef` 来操作输入框。
 
 ### forwardRef
 
@@ -1176,7 +1176,7 @@ class App extends Component {
 
 `forwardRef`可以使得组件可以通过参数中的ref将一个DOM节点暴露给父组件。
 
-**类型定义
+**类型定义**
 
 ```
 function forwardRef(render: Function): {
@@ -1225,7 +1225,7 @@ export default function Form() {
 
 
 
-上述示例中，MyInput组件通过forwardRef将输入框暴露给父组件From，这样Form可以通过该Ref操作Inupt。
+上述示例中，`MyInput` 组件通过 `forwardRef` 将输入框暴露给父组件 `Form`，这样 `Form` 可以通过该 `Ref` 操作 `Inupt`。
 
 ### lazy
 
@@ -1249,20 +1249,19 @@ function lazy<T>(promiseCtor: () => PromiseType<{
 
 ```tsx
 import { lazy } from 'openinula';
-;
 
 const LazyComp = lazy(() => import { App } from './App');
 ```
 
 
 
-在上述示例中，使用`lazy`函数来异步加载`<App>`组件。lazy函数接受一个函数，该函数返回一个`import()`语句，用于动态加载组件模块。
+在上述示例中，使用`lazy`函数来异步加载`<App>`组件。`lazy` 函数接受一个函数，该函数返回一个`import()`语句，用于动态加载组件模块。
 
 ### memo
 
 **功能介绍**
 
-使用 memo 函数包裹组件，通常情况下，只要该组件的 props 没有改变，可以防止组件的重新渲染。
+使用 `memo`` 函数包裹组件，通常情况下，只要该组件的 props 没有改变，可以防止组件的重新渲染。
 
 **接口定义**
 
@@ -1374,7 +1373,7 @@ function Footer() {
 
 `cloneElement` 可以从一个已有元素创建一个新的Inula元素。
 
-**接口定义
+**接口定义**
 
 ```jsx
 function cloneElement(element: any, setting: any, ...children: any[]): {
@@ -1453,7 +1452,7 @@ class App extends Component {
 
 
 
-在上述代码中，通过·`findDOMNode`获取组件中的DOM节点。在`componentDidMount`生命周期方法中，通过调用`findDOMNode(this)`来获取组件实例对应的DOM节点，并将其赋值给`input`变量。然后，通过调用`input.select()`来选中输入框中的文本。
+在上述代码中，通过`findDOMNode`获取组件中的DOM节点。在`componentDidMount`生命周期方法中，通过调用`findDOMNode(this)`来获取组件实例对应的DOM节点，并将其赋值给`input`变量。然后，通过调用`input.select()`来选中输入框中的文本。
 
 ### flushSync
 
@@ -1469,7 +1468,7 @@ function flushSync(fn: any): any
 
 
 
-- `fn`:表示一个函数作为参数，在这个回调函数中执行需要同步处理的更新操作。
+- `fn`：表示一个函数作为参数，在这个回调函数中执行需要同步处理的更新操作。
 
 **示例**
 
@@ -1599,7 +1598,7 @@ function App() {
 
 `isElement` 用于检查给定的值是否是一个 `Inula`组件。
 
-**接口定义
+**接口定义**
 
 ```tsx
 function isElement(ele: any): ele is InulaElement;
@@ -1699,6 +1698,7 @@ function isForwardRef(ele: any): ele is InulaElement;
 
 
 `ele`：输入的任意待检查元素。
+```
 
 **示例**
 
@@ -1732,13 +1732,12 @@ type LazyComponent<T extends ComponentType<any>> = ExoticComponent<ComponentProp
 
 interface ExoticComponent<P = KVObject> {
   (props: P): InulaElement | null;
-}```
+}
+```
+
 `ele`：输入的任意待检查元素。
 
 **示例**
-```
-
-
 
 ```tsx
 import Inula, { lazy, isLazy } from 'openinula';
@@ -1768,7 +1767,7 @@ type MemoComponent<T extends ComponentType<any>> = ExoticComponent<ComponentProp
 
 
 
-`ele`**输入的任意待检查元素。
+`ele`：输入的任意待检查元素。
 
 **示例**
 

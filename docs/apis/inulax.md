@@ -1,10 +1,9 @@
 ---
 sidebar_position: 2
-id: inulaX
-hide_title: true
+id: Inula-X
 ---
 
-inulaX是集成在`openinula`框架中用于状态管理的库。它能集中式地存储、管理应用中所有组件的状态，并通过相应的规则(`actions`)保证状态(`state`)以可预测的方式发生变化。
+Inula-X是集成在`openinula`框架中用于状态管理的库。它能集中式地存储、管理应用中所有组件的状态，并通过相应的规则(`actions`)保证状态(`state`)以可预测的方式发生变化。
 
 ## createStore()
 

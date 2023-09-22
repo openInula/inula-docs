@@ -1,12 +1,11 @@
 ---
 sidebar_position: 5
-id: inula-request
-hide_title: true
+id: Inula-request
 ---
 
 欢迎使用`inula-request`请求组件，接下来本文档将对`inula-request` API使用进行一个详细介绍，帮助您更便捷地发送网络请求！
 
-## inula-request请求方法引入
+## Inula-request请求方法引入
 
 方便起见，该文档将使用`ir`别名介绍`inula-request`请求方法，即使用如下方式导入请求组件：
 
@@ -14,7 +13,7 @@ hide_title: true
 import ir from 'inula-request';
 ```
 
-## inula-request 全局 API
+## Inula-request 全局 API
 
 ### ir(config)
 
@@ -276,6 +275,7 @@ ir.post('https://www.example.com/data', {
 ### ir.delete(url[, config])
 
 **功能介绍**
+
 该接口将发送`DELETE`网络请求删除`url`上的资源，并返回一个`Promise`对象。
 
 **接口定义**

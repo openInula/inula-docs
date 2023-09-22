@@ -1,7 +1,6 @@
 ---
 sidebar_position: 3
-id: inula-intl
-hide_title: true
+id: Inula-intl
 ---
 
 ## Inula-intl简介
@@ -399,6 +398,7 @@ Je m'appelle Fred
 ### DateTimeFormatter
 
 **功能介绍**
+
 `DateTimeFormatter`类主要提供了时间格式化方法，开发者可以基于类直接进行格式化而不需要获取`i18n`实例。
 
 **类定义**
@@ -442,9 +442,10 @@ date.dateTimeFormat(new Date());
 ### NumberFormatter
 
 **功能介绍**
+
 `NumberFormatter`类主要提供了数字格式化方法，开发者可以基于类直接进行格式化而不需要获取`i18n`实例。
 
-**接口定义**
+**类定义**
 
 ```tsx
 class NumberFormatter {
@@ -705,7 +706,7 @@ const App = () => {
 
 使用`useIntl` 钩子函数可以访问如下功能：
 
-- 格式化消息: 使用`formatMessage`函数可以格式化消息字符串。你可以定义一系列消息，在不同语言环境下进行翻译，并且根据当前语言环境获取到国际化的消息。例如：
+- **格式化消息**: 使用`formatMessage`函数可以格式化消息字符串。你可以定义一系列消息，在不同语言环境下进行翻译，并且根据当前语言环境获取到国际化的消息。例如：
   
   ```jsx
   // useIntlDemo.js
@@ -721,7 +722,7 @@ const App = () => {
     Hello,world!
     ```
 
-- 格式化时间日期: 使用`formatDate`函数来格式化日期和时间。`formatDate`函数会根据当前语言环境和所设置的格式选项返回相应的格式化结果。例如：
+- **格式化时间日期**: 使用`formatDate`函数来格式化日期和时间。`formatDate`函数会根据当前语言环境和所设置的格式选项返回相应的格式化结果。例如：
   
   ```jsx
   // useIntlDemo.js
@@ -738,7 +739,7 @@ const App = () => {
     1/1/2023
     ```
 
-- 格式化数字: 使用`formatNumber`函数来格式化数字。`formatNumber`函数可以根据当前语言环境和所设置的格式选项返回相应的格式化结果。例如：
+- **格式化数字**: 使用`formatNumber`函数来格式化数字。`formatNumber`函数可以根据当前语言环境和所设置的格式选项返回相应的格式化结果。例如：
   
   ```jsx
   // useIntlDemo.js
@@ -876,7 +877,7 @@ export interface InjectOptions {
 - `isUsingForwardRef`:可选参数，用于指示被包装的组件是否使用了 `forwardRef`
 - `ensureContext`: 可选参数，布尔值，用于判断是否传递了正确的国际化上下文。如果设置为 `true`，当没有提供上下文时，`injectIntl` 将在控制台上显示警告信息。默认值为 `false`
 
-**代码示例**
+**示例**
 
 使用`injectIntl`时，我们通常将一个组件用`injectIntl`包裹，被包裹的组件会通过`props`接收国际化对象`intl`。它包含了格式化消息、日期、时间等方法，还可以获取当前语言环境、格式化文本消息等信息。
 
