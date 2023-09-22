@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'openinula doc site',
+  title: 'openInula文档',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -17,8 +17,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'openinula', // Usually your GitHub org/user name.
-  projectName: 'openinula doc', // Usually your repo name.
+  organizationName: 'openInula', // Usually your GitHub org/user name.
+  projectName: 'openInula文档', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -57,7 +57,8 @@ const config = {
         logo: {
           alt: 'openinula',
           src: 'img/logo.png',
-          srcDark: 'img/dark logo.png'
+          srcDark: 'img/dark logo.png',
+          href: 'https://openinula.net'
         },
         items: [
           {
