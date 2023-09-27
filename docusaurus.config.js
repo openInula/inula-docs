@@ -79,7 +79,9 @@ const config = {
             position: 'right',
           },
         ],
-        hideOnScroll: true
+      },
+      tableOfContents: {
+        maxHeadingLevel: 6
       },
       footer: {
         style: 'light',
