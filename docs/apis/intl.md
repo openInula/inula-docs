@@ -189,7 +189,7 @@ const englishPlurals = {
 ```tsx
 import { I18n } from 'inula-intl';
 
-function App() => {
+function App() {
   const messages = {
     'greeting': 'Hello, {name}!'
   };
