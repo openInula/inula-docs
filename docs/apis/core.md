@@ -3,7 +3,7 @@ sidebar_position: 1
 id: Inula
 ---
 
-# Inula API
+# Inula
 
 ## 组件
 ### Component
